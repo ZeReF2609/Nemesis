@@ -1,0 +1,561 @@
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="animated-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title fade-in">
+        Transformamos Visiones en
+        <span class="shimmer-text">Experiencias Digitales Extraordinarias</span>
+      </h1>
+      <p class="hero-subtitle fade-in">
+        Impulsamos marcas y negocios con soluciones digitales escalables,
+        seguras y potenciadas en la nube.
+      </p>
+      <div class="hero-cta fade-in">
+        <button
+          class="btn btn-primary shiny-border"
+          (click)="scrollToSection('contact')"
+        >
+          Comienza tu Transformación Digital
+          <svg
+            class="btn-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+        <button class="btn btn-secondary" (click)="scrollToSection('services')">
+          <svg
+            class="btn-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          Ver Nuestro Portafolio
+        </button>
+      </div>
+      <div class="hero-badge fade-in">
+        <span class="badge">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          Desarrollo 100% Personalizado
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Meteors Animation -->
+  <div class="meteors">
+    <div class="meteor" style="left: 10%; animation-delay: 0s"></div>
+    <div class="meteor" style="left: 80%; animation-delay: 1s"></div>
+    <div class="meteor" style="left: 30%; animation-delay: 2s"></div>
+    <div class="meteor" style="left: 70%; animation-delay: 3s"></div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title fade-in">Soluciones que Generan Resultados</h2>
+      <p class="section-subtitle fade-in">
+        Cada solución es diseñada estratégicamente y desarrollada con altos
+        estándares de calidad, enfocada en resultados reales para tu negocio.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div
+        class="service-card fade-in"
+        *ngFor="let service of services; let i = index"
+        [style.animation-delay]="i * 0.1 + 's'"
+      >
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <ng-container [ngSwitch]="service.icon">
+                <!-- Modern Web Icon -->
+                <path
+                  *ngSwitchCase="'Globe'"
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+                <!-- E-commerce Icon -->
+                <path
+                  *ngSwitchCase="'ShoppingBag'"
+                  d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                />
+                <!-- Dashboard Icon -->
+                <path
+                  *ngSwitchCase="'PieChart'"
+                  d="M21.21 15.89A10 10 0 1 1 8 2.83"
+                />
+                <path
+                  *ngSwitchCase="'PieChart'"
+                  d="M22 12A10 10 0 0 0 12 2v10z"
+                />
+                <!-- Custom Development Icon -->
+                <path
+                  *ngSwitchCase="'Cpu'"
+                  d="M18 4h2a2 2 0 0 1 2 2v2M6 4H4a2 2 0 0 0-2 2v2m0 8v2a2 2 0 0 0 2 2h2m8 0h2a2 2 0 0 0 2-2v-2"
+                />
+                <rect
+                  *ngSwitchCase="'Cpu'"
+                  x="9"
+                  y="9"
+                  width="6"
+                  height="6"
+                  rx="1"
+                />
+              </ng-container>
+            </svg>
+          </div>
+          <div class="service-number">0{{ i + 1 }}</div>
+        </div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+            {{ feature }}
+          </li>
+        </ul>
+        <div class="service-cta">
+          <button class="service-btn" (click)="scrollToSection('contact')">
+            Solicitar Propuesta
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Us Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="section-title">Dos Expertos, Una Misión</h2>
+        <p class="about-description">
+          Como socios fundadores, Julio y Wilder combinan más de 10 años de
+          experiencia en desarrollo web y arquitectura en la nube. Cada proyecto
+          recibe nuestra atención personalizada, desde la estrategia inicial
+          hasta el despliegue en AWS.
+        </p>
+
+        <div class="expertise-grid">
+          <div class="expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h4>Seguridad en la Nube</h4>
+            <p>Infraestructura AWS con las mejores prácticas de seguridad</p>
+          </div>
+
+          <div class="expertise-card">
+            <div class="expertise-icon">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <h4>Alto Rendimiento</h4>
+            <p>Aplicaciones optimizadas para velocidad y escalabilidad</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-image">
+        <div class="image-container">
+          <!-- Reemplaza con la ruta real de tu imagen -->
+          <img
+            src="assets/images/team.png"
+            alt="Julio y Wilder - Fundadores & Desarrolladores Principales"
+            class="team-photo"
+          />
+          <div class="team-overlay">
+            <div class="team-badge">
+              <strong>Julio & Wilder</strong>
+              <span>Fundadores & Desarrolladores Principales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-content">
+      <div class="contact-info">
+        <h2 class="section-title">Conversemos sobre tu Proyecto</h2>
+        <p class="contact-description">
+          Agenda una consulta. Analizaremos tu negocio y diseñaremos una
+          solución a medida que impulse tu crecimiento.
+        </p>
+
+        <div class="contact-highlights">
+          <div class="highlight-card">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            <div>
+              <h4>Llamada de descubrimiento</h4>
+              <p>
+                Conversación estratégica para comprender tu visión y retos
+                digitales
+              </p>
+            </div>
+          </div>
+
+          <div class="highlight-card">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 20h9" />
+              <path
+                d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+              />
+            </svg>
+            <div>
+              <h4>Propuesta Personalizada</h4>
+              <p>Diseñada específicamente para tu negocio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <div>
+              <strong>Ubicación</strong>
+              <p>Remoto • Disponibilidad Global</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              />
+            </svg>
+            <div>
+              <strong>WhatsApp Business</strong>
+              <p>
+                <a
+                  class="whatsapp-link"
+                  href="https://wa.me/51902027977"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat WhatsApp Julio"
+                >
+                  +51 902 027 977 — Julio Sanchez
+                </a>
+              </p>
+              <p>
+                <a
+                  class="whatsapp-link"
+                  href="https://wa.me/51982199947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat WhatsApp Wilder"
+                >
+                  +51 982 199 947 — Wilder Rojas
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <div class="form-header">
+          <h3>Comienza tu Proyecto Hoy</h3>
+          <p>
+            Cuéntanos tu idea y te ayudamos a convertirla en una solución real
+          </p>
+        </div>
+
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Tu Nombre *</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                [class.error]="f['name'].invalid && f['name'].touched"
+                placeholder="Ingresa tu nombre..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                [class.error]="f['email'].invalid && f['email'].touched"
+                placeholder="Email"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Empresa / Proyecto</label>
+            <input
+              type="text"
+              id="company"
+              formControlName="company"
+              placeholder="¿Cómo se llama tu negocio o proyecto?"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="service">¿Qué necesitas desarrollar? *</label>
+            <select
+              id="service"
+              formControlName="service"
+              [class.error]="f['service'].invalid && f['service'].touched"
+            >
+              <option value="">Selecciona una opción</option>
+              <option value="website">Sitio Web Corporativo</option>
+              <option value="ecommerce">Tienda Online (E-commerce)</option>
+              <option value="system">Sistema de Administración</option>
+              <option value="custom">Desarrollo Personalizado</option>
+              <option value="consulting">Consultoría Técnica</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Descríbenos tu proyecto *</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              [class.error]="f['message'].invalid && f['message'].touched"
+              rows="4"
+              placeholder="Cuentanos un poco sobre tu proyecto en mente :)"
+            ></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button
+              type="submit"
+              class="btn btn-primary shiny-border submit-btn"
+              [disabled]="isSubmitting || contactForm.invalid"
+            >
+              <span *ngIf="!isSubmitting && !submitted">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                Enviar Propuesta a Julio & Wilder
+              </span>
+              <span *ngIf="isSubmitting">Procesando tu solicitud...</span>
+              <span *ngIf="submitted">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                ¡Recibido! Te contactaremos pronto
+              </span>
+            </button>
+            <p class="form-note">
+              * Todos los proyectos incluyen despliegue y configuración en AWS
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3 class="footer-title">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            style="margin-right: 8px"
+          >
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+          Julio & Wilder Digital Solutions
+        </h3>
+        <p class="footer-description">
+          Transformamos negocios con soluciones web escalables en la nube AWS.
+          Dos expertos, atención personalizada, resultados extraordinarios.
+        </p>
+        <div class="footer-badges">
+          <span class="dev-badge">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg>
+            Desarrollo Personalizado
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4 class="footer-heading">Servicios</h4>
+        <ul class="footer-list">
+          <li><a href="#services">Desarrollo Web Corporativo</a></li>
+          <li><a href="#services">E-commerce Avanzado</a></li>
+          <li><a href="#services">Sistemas en la Nube AWS</a></li>
+          <li><a href="#services">Soluciones a Medida</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4 class="footer-heading">Conéctate Con Nosotros</h4>
+        <ul class="footer-list">
+          <li>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12,6 12,12 16,14" />
+            </svg>
+            Soporte ágil y atención prioritaria
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; 2024 Julio & Wilder Digital Solutions. Todos los derechos
+        reservados.
+      </p>
+      <p class="footer-tagline">Dos expertos, soluciones extraordinarias.</p>
+    </div>
+  </div>
+</footer>

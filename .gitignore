@@ -1,0 +1,31 @@
+# Angular build outputs
+/dist/
+/tmp/
+/out-tsc/
+/.angular/cache/
+
+# Dependencies
+/node_modules/
+
+# IDEs and editors
+/.idea/
+/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Logs and reports
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+/coverage/
+
+# OS junk
+/.DS_Store
+Thumbs.db

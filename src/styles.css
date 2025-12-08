@@ -1,0 +1,248 @@
+/* CSS Variables - Sistema de Diseño Dark Mode First */
+:root {
+  /* Colores Primarios */
+  --primary-500: #00e0ff;
+  --primary-700: #00b8d4;
+  --primary-100: #d1faff;
+
+  /* Colores Secundarios */
+  --secondary-500: #ff00e6;
+
+  /* Colores Neutrales */
+  --page-bg: #050505;
+  --surface-bg: #111111;
+  --border-subtle: #222222;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-disabled: #52525b;
+
+  /* Colores Semánticos */
+  --success: #4ade80;
+  --error: #f87171;
+
+  /* Espaciado (Sistema 8px) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-xxl: 96px;
+
+  /* Tipografía */
+  --font-family: "Poppins", sans-serif;
+
+  /* Bordes */
+  --radius-md: 12px;
+  --radius-full: 9999px;
+
+  /* Efectos de Brillo */
+  --glow-sm: 0 0 8px 0 rgba(0, 224, 255, 0.3);
+  --glow-md: 0 0 16px 0 rgba(0, 224, 255, 0.4);
+}
+
+/* Reset y Base */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Componentes Base */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 300ms ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--primary-500);
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-md);
+}
+
+/* Efectos de Brillo para Magic UI */
+.shiny-border {
+  position: relative;
+  background: linear-gradient(135deg, var(--surface-bg), var(--border-subtle));
+  border-radius: var(--radius-md);
+}
+
+.shiny-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-100),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.shiny-border:hover::before {
+  left: 100%;
+}
+
+/* Grid Animado */
+.animated-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}
+
+/* Meteors Effect */
+.meteors {
+  position: relative;
+  overflow: hidden;
+}
+
+.meteor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: var(--primary-500);
+  border-radius: 50%;
+  animation: meteor-fall 3s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes meteor-fall {
+  0% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Text Shimmer */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--text-secondary) 25%,
+    var(--primary-100) 50%,
+    var(--text-secondary) 75%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .btn {
+    height: 48px;
+    padding: 0 24px;
+    font-size: 14px;
+  }
+
+  :root {
+    --space-xxl: 64px;
+    --space-xl: 48px;
+  }
+}
+
+/* Animaciones de entrada */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efectos hover para tarjetas */
+.service-card {
+  transition: all 300ms ease-out;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-bg);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-500);
+  box-shadow: var(--glow-sm);
+}
