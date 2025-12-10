@@ -465,8 +465,11 @@
                 ¡Recibido! Te contactaremos pronto
               </span>
             </button>
-            <p class="form-note">
+            <p class="form-note" *ngIf="!errorMessage">
               * Todos los proyectos incluyen despliegue y configuración en AWS
+            </p>
+            <p class="form-error" *ngIf="errorMessage">
+              {{ errorMessage }}
             </p>
           </div>
         </form>

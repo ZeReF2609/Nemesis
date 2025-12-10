@@ -7,6 +7,7 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import { EmailService } from "./services/email.service";
 
 @Component({
   selector: "app-root",
@@ -20,8 +21,12 @@ export class AppComponent {
   contactForm: FormGroup;
   isSubmitting = false;
   submitted = false;
+  errorMessage = "";
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private emailService: EmailService
+  ) {
     this.contactForm = this.fb.group({
       name: ["", [Validators.required, Validators.minLength(3)]],
       email: ["", [Validators.required, Validators.email]],
@@ -42,20 +47,32 @@ export class AppComponent {
     }
 
     this.isSubmitting = true;
+    this.errorMessage = "";
 
-    // Simulación de envío
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Enviar email usando EmailJS
+      await this.emailService.sendContactForm(this.contactForm.value);
 
-    this.isSubmitting = false;
-    this.submitted = true;
+      this.isSubmitting = false;
+      this.submitted = true;
 
-    // Reset form
-    this.contactForm.reset();
+      // Reset form
+      this.contactForm.reset();
 
-    // Reset status after 5 seconds
-    setTimeout(() => {
-      this.submitted = false;
-    }, 5000);
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        this.submitted = false;
+      }, 5000);
+    } catch (error) {
+      this.isSubmitting = false;
+      this.errorMessage = "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.";
+      console.error("Error enviando formulario:", error);
+
+      // Limpiar mensaje de error después de 5 segundos
+      setTimeout(() => {
+        this.errorMessage = "";
+      }, 5000);
+    }
   }
 
   markAllAsTouched() {
