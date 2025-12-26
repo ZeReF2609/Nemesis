@@ -242,6 +242,65 @@
   </div>
 </section>
 
+<!-- Team / Portfolio Section -->
+<section class="team" id="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title fade-in">Nuestros Portafolios</h2>
+      <p class="section-subtitle fade-in">
+        Conoce a las personas detrás de cada solución digital
+      </p>
+    </div>
+
+    <div class="team-grid">
+      <div
+        class="team-card fade-in"
+        *ngFor="let member of team; let i = index"
+        [style.animation-delay]="i * 0.15 + 's'"
+      >
+        <div class="team-image">
+          <img [src]="member.image" [alt]="member.name" />
+        </div>
+
+        <div class="team-content">
+          <h3>{{ member.name }}</h3>
+          <span class="team-role">{{ member.role }}</span>
+
+          <p class="team-description">
+            {{ member.description }}
+          </p>
+
+          <div class="team-links">
+            <a
+              class="btn btn-primary"
+              [href]="member.portfolioUrl"
+              target="_blank"
+            >
+              Ver Portafolio
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              [href]="member.githubUrl"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              [href]="member.linkedinUrl"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Contact Section -->
 <section class="contact" id="contact">
   <div class="container">

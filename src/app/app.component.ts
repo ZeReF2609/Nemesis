@@ -170,4 +170,28 @@ export class AppComponent {
         "Mantenimiento, actualizaciones y optimizaciones post-lanzamiento.",
     },
   ];
+
+  team = [
+    {
+      name: "Julio Sanchez",
+      role: "Full Stack Developer & AWS Cloud Computing",
+      description:
+        "Desarrollador Full Stack especializado en Angular, ASP.NET Core y arquitecturas en la nube con AWS. Enfocado en construir soluciones escalables, seguras y orientadas a negocio.",
+      image: "assets/images/JulioSanchez.jpg",
+      portfolioUrl: "https://jose-julio-sanchez-cruzado.vercel.app/",
+      githubUrl: "https://github.com/J0seJuli0",
+      linkedinUrl: "https://linkedin.com/in/josejuliosanchezcruzado",
+    },
+    {
+      name: "Wilder Rojas",
+      role: "Full Stack Developer",
+      description:
+        "Desarrollador Full Stack especializado en Java, Spring Boot y Angular, con enfoque en soluciones escalables, código limpio y experiencia de usuario.",
+      image: "assets/images/WilderRojas.png",
+      portfolioUrl: "https://wilder-rojas-marin.vercel.app/",
+      githubUrl: "https://github.com/ZeReF2609",
+      linkedinUrl: "https://linkedin.com/in/wilderrojas",
+    },
+  ];
+
 }
