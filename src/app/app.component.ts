@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { Analytics } from "@vercel/analytics/next"
+
 import {
   FormsModule,
   ReactiveFormsModule,
@@ -179,8 +181,7 @@ export class AppComponent {
         "Desarrollador Full Stack especializado en Angular, ASP.NET Core y arquitecturas en la nube con AWS. Enfocado en construir soluciones escalables, seguras y orientadas a negocio.",
       image: "assets/images/JulioSanchez.jpg",
       portfolioUrl: "https://jose-julio-sanchez-cruzado.vercel.app/",
-      githubUrl: "https://github.com/J0seJuli0",
-      linkedinUrl: "https://linkedin.com/in/josejuliosanchezcruzado",
+      githubUrl: "https://github.com/J0seJuli0"
     },
     {
       name: "Wilder Rojas",
@@ -189,8 +190,7 @@ export class AppComponent {
         "Desarrollador Full Stack especializado en Java, Spring Boot y Angular, con enfoque en soluciones escalables, código limpio y experiencia de usuario.",
       image: "assets/images/WilderRojas.png",
       portfolioUrl: "https://wilder-rojas-marin.vercel.app/",
-      githubUrl: "https://github.com/ZeReF2609",
-      linkedinUrl: "https://linkedin.com/in/wilderrojas",
+      githubUrl: "https://github.com/ZeReF2609"
     },
   ];
 
