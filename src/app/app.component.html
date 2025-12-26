@@ -13,36 +13,27 @@
       </p>
       <div class="hero-cta fade-in">
         <button
-          class="btn btn-primary shiny-border"
+          class="btn btn-primary hero-btn-primary shiny-border"
           (click)="scrollToSection('contact')"
         >
           Comienza tu Transformación Digital
-          <svg
-            class="btn-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-          >
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </button>
-        <button class="btn btn-secondary" (click)="scrollToSection('services')">
-          <svg
-            class="btn-icon"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-          >
+
+        <button
+          class="btn btn-secondary hero-btn-secondary"
+          (click)="scrollToSection('services')"
+        >
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg>
           Ver Nuestro Portafolio
         </button>
       </div>
+
       <div class="hero-badge fade-in">
         <span class="badge">
           <svg

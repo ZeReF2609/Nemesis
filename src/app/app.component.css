@@ -65,25 +65,69 @@
   margin-right: auto;
 }
 
-.hero-cta {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: var(--space-xl);
-}
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-.hero-cta .btn {
-  min-width: 220px;
-  padding: var(--space-md) var(--space-xl);
-  font-weight: 600;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  border-radius: var(--radius-full);
-}
+  .hero-cta .btn {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .hero-btn-primary {
+    background-color: var(--primary-500);
+    color: #fff;
+    border: 1px solid var(--primary-500);
+  }
+
+  .hero-btn-primary:hover {
+    background-color: var(--primary-600);
+    border-color: var(--primary-600);
+  }
+
+  .hero-btn-secondary {
+    background-color: var(--surface-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .hero-btn-secondary:hover {
+    background-color: var(--page-bg);
+    border-color: var(--primary-500);
+    color: var(--primary-500);
+  }
+
+  /* Icono */
+  .hero-cta .btn-icon {
+    transition: transform 0.2s ease;
+  }
+
+  .hero-cta .btn:hover .btn-icon {
+    transform: translateX(2px);
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .hero-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
 
 .btn-icon {
   transition: transform 0.3s ease;
