@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { Analytics } from "@vercel/analytics/next"
 
 import {
   FormsModule,
@@ -27,7 +26,7 @@ export class AppComponent {
 
   constructor(
     private fb: FormBuilder,
-    private emailService: EmailService
+    private emailService: EmailService,
   ) {
     this.contactForm = this.fb.group({
       name: ["", [Validators.required, Validators.minLength(3)]],
@@ -67,7 +66,8 @@ export class AppComponent {
       }, 5000);
     } catch (error) {
       this.isSubmitting = false;
-      this.errorMessage = "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.";
+      this.errorMessage =
+        "Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.";
       console.error("Error enviando formulario:", error);
 
       // Limpiar mensaje de error después de 5 segundos
@@ -181,7 +181,7 @@ export class AppComponent {
         "Desarrollador Full Stack especializado en Angular, ASP.NET Core y arquitecturas en la nube con AWS. Enfocado en construir soluciones escalables, seguras y orientadas a negocio.",
       image: "assets/images/JulioSanchez.jpg",
       portfolioUrl: "https://jose-julio-sanchez-cruzado.vercel.app/",
-      githubUrl: "https://github.com/J0seJuli0"
+      githubUrl: "https://github.com/J0seJuli0",
     },
     {
       name: "Wilder Rojas",
@@ -190,8 +190,7 @@ export class AppComponent {
         "Desarrollador Full Stack especializado en Java, Spring Boot y Angular, con enfoque en soluciones escalables, código limpio y experiencia de usuario.",
       image: "assets/images/WilderRojas.png",
       portfolioUrl: "https://wilder-rojas-marin.vercel.app/",
-      githubUrl: "https://github.com/ZeReF2609"
+      githubUrl: "https://github.com/ZeReF2609",
     },
   ];
-
 }
